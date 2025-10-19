@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" data-bs-theme="light">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +32,8 @@
         <a href="index.html" class="fs-3 text-decoration-none fw-bolder">Metehan'ın Blogu</a>
         <p class="text-body-secondary fs-sm mt-1">Yazılım ve Yaşam Notları</p>
       </div>
-      <ul class="nav nav-pills flex-column gap-1 mb-auto">
+      
+      <ul class="nav nav-pills flex-column gap-1">
         <li class="nav-item">
           <a href="index.html" class="nav-link">
             <i class="bi bi-house-door-fill me-2"></i> Ana Sayfa
@@ -54,10 +55,33 @@
           </a>
         </li>
       </ul>
-      <div class="mt-4">
-        <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="GitHub profilim"><i class="bi bi-github"></i></a>
-        <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="LinkedIn profilim"><i class="bi bi-linkedin"></i></a>
-        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Twitter profilim"><i class="bi bi-twitter-x"></i></a>
+
+      <form class="input-group my-4" role="search" onsubmit="return false;">
+        <input type="search" class="form-control form-control-sm" placeholder="Blogda ara..." aria-label="Blogda ara">
+        <button class="btn btn-outline-secondary btn-sm" type="submit" aria-label="Ara">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+      
+      <div class="mt-auto">
+        <div class="dropdown mb-3">
+          <button class="btn btn-outline-secondary btn-sm w-100 d-flex align-items-center justify-content-center" type="button" id="themeSwitcher" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-sun-fill me-2" id="theme-icon-active"></i> 
+            <span id="theme-text-active">Tema</span>
+            <i class="bi bi-chevron-down ms-auto small"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="themeSwitcher">
+            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"><i class="bi bi-sun-fill me-2"></i> Aydınlık</button></li>
+            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"><i class="bi bi-moon-stars-fill me-2"></i> Karanlık</button></li>
+            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto"><i class="bi bi-circle-half me-2"></i> Otomatik (Sistem)</button></li>
+          </ul>
+        </div>
+        
+        <div>
+          <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="GitHub profilim"><i class="bi bi-github"></i></a>
+          <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="LinkedIn profilim"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Twitter profilim"><i class="bi bi-twitter-x"></i></a>
+        </div>
       </div>
     </div>
   </nav>
@@ -166,7 +190,26 @@
               </h2>
               <p class="mb-0 text-body-secondary d-none d-sm-block">
                 İki yıldır tam zamanlı uzaktan çalışan biri olarak, dikkat dağınıklığını önleme ve "flow state" durumuna geçme tekniklerim.
-              </D>
+              </p>
+            </div>
+          </article>
+
+          <article class="d-md-flex align-items-center p-3 p-md-4 mb-3 rounded-4 content-panel shadow-sm card-hover">
+            <a href="post.html" class="d-block mb-3 mb-md-0">
+              <img src="assets/img/post6.jpg" alt="Web erişilebilirliği" class="img-fluid rounded-3 me-md-4" style="width: 200px; height: 120px; object-fit: cover;" loading="lazy">
+            </a>
+            <div class="flex-grow-1">
+              <div class="mb-2">
+                <span class="badge text-bg-secondary">Frontend</span>
+                <span class="text-body-secondary ms-2 small">02.10.2025</span>
+              </div>
+              <h2 class="h4 fw-bold mb-2">
+                <a href="post.html" class="text-decoration-none text-body">Web Erişilebilirliği (a11y) Neden Önemlidir?</a>
+              </h2>
+              <p class="mb-0 text-body-secondary d-none d-sm-block">
+                Sadece "olması gereken" bir şey değil, aynı zamanda daha iyi SEO 
+                ve daha geniş bir kullanıcı kitlesi demektir.
+              </p>
             </div>
           </article>
           
@@ -201,5 +244,62 @@
     </footer>
 
   </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <script>
+    /*!
+    * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
+    */
+    (() => {
+      'use strict'
+      const getStoredTheme = () => localStorage.getItem('theme')
+      const setStoredTheme = theme => localStorage.setItem('theme', theme)
+      const getPreferredTheme = () => {
+        const storedTheme = getStoredTheme()
+        if (storedTheme) { return storedTheme }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      }
+      const setTheme = theme => {
+        if (theme === 'auto') {
+          document.documentElement.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+        } else {
+          document.documentElement.setAttribute('data-bs-theme', theme)
+        }
+      }
+      setTheme(getPreferredTheme())
+      const showActiveTheme = (theme, focus = false) => {
+        const themeSwitcher = document.querySelector('#themeSwitcher')
+        if (!themeSwitcher) { return }
+        const themeSwitcherText = document.querySelector('#theme-text-active')
+        const themeSwitcherIcon = document.querySelector('#theme-icon-active')
+        const activeThemeIcon = document.querySelector(`[data-bs-theme-value="${theme}"] i`)
+        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+          element.classList.remove('active'); element.setAttribute('aria-pressed', 'false')
+        })
+        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+        if (btnToActive) {
+          btnToActive.classList.add('active'); btnToActive.setAttribute('aria-pressed', 'true')
+          themeSwitcherIcon.className = activeThemeIcon.className; 
+          themeSwitcherText.textContent = btnToActive.textContent.trim(); 
+        }
+        if (focus) { themeSwitcher.focus() }
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        const storedTheme = getStoredTheme()
+        if (storedTheme !== 'light' && storedTheme !== 'dark') {
+          setTheme(getPreferredTheme())
+        }
+      })
+      window.addEventListener('DOMContentLoaded', () => {
+        showActiveTheme(getPreferredTheme())
+        document.querySelectorAll('[data-bs-theme-value]')
+          .forEach(toggle => {
+            toggle.addEventListener('click', () => {
+              const theme = toggle.getAttribute('data-bs-theme-value')
+              setStoredTheme(theme); setTheme(theme); showActiveTheme(theme, true)
+            })
+          })
+      })
+    })()
+  </script>
 </body>
 </html>
