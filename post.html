@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Modern JavaScript (ES2023) ile Gelen 5 Harika Özellik - Metehan'ın Blogu</title>
+  <meta name="description" content="JavaScript dünyası durmuyor. ES2023 ile gelen `Array.prototype.findLast` gibi hayat kurtaran yeniliklere hızlıca göz atalım.">
+  <meta property="og:title" content="Modern JavaScript (ES2023) ile Gelen 5 Harika Özellik">
+  <meta property="og:description" content="ES2023 ile gelen `Array.prototype.findLast` gibi hayat kurtaran yeniliklere hızlıca göz atalım.">
+  <meta property="og:type" content="article">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header class="mobile-header d-lg-none p-3 d-flex justify-content-between align-items-center">
+    <a href="index.html" class="fs-4 text-decoration-none fw-bold">M. Blog</a>
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Navigasyonu aç">
+      <i class="bi bi-list"></i>
+    </button>
+  </header>
+
+  <nav class="sidebar offcanvas-lg offcanvas-start p-4" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+    <div class="offcanvas-header d-lg-none">
+      <h5 class="offcanvas-title" id="sidebarLabel">Menü</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="Kapat"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div class="sidebar-logo text-center text-lg-start mb-4">
+        <a href="index.html" class="fs-3 text-decoration-none fw-bolder">Metehan'ın Blogu</a>
+        <p class="text-body-secondary fs-sm mt-1">Yazılım ve Yaşam Notları</p>
+      </div>
+      <ul class="nav nav-pills flex-column gap-1 mb-auto">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <i class="bi bi-house-door-fill me-2"></i> Ana Sayfa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="blog.html" class="nav-link active" aria-current="page">
+            <i class="bi bi-file-earmark-text-fill me-2"></i> Blog
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">
+            <i class="bi bi-person-fill me-2"></i> Hakkımda
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">
+            <i class="bi bi-envelope-fill me-2"></i> İletişim
+          </a>
+        </li>
+      </ul>
+      <div class="mt-4">
+        <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="GitHub profilim"><i class="bi bi-github"></i></a>
+        <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="LinkedIn profilim"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Twitter profilim"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content-wrapper">
+    
+    <main class="main-content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-8">
+            <div class="d-flex justify-content-between mb-3">
+              <a href="blog.html" class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-arrow-left"></i> Tüm Yazılara Dön
+              </a>
+              <a href="index.html" class="btn btn-outline-secondary btn-sm">
+                Ana Sayfa <i class="bi bi-house"></i>
+              </a>
+            </div>
+
+            <article class="p-4 p-md-5 rounded-4 content-panel shadow-sm">
+              <header class="mb-4">
+                <h1 class="display-6 fw-bold mb-3">
+                  Modern JavaScript (ES2023) ile Gelen 5 Harika Özellik
+                </h1>
+                <div class="d-flex flex-wrap gap-2 align-items-center text-body-secondary small">
+                  <span><i class="bi bi-calendar3 me-1"></i> 15 Ekim 2025</span>
+                  <span>&middot;</span>
+                  <span><i class="bi bi-clock me-1"></i> 4 dk okuma süresi</span>
+                  <span>&middot;</span>
+                  <div>
+                    <i class="bi bi-tags me-1"></i>
+                    <a href="#" class="badge text-bg-primary text-decoration-none">JavaScript</a>
+                    <a href="#" class="badge text-bg-secondary text-decoration-none">Web Geliştirme</a>
+                  </div>
+                </div>
+              </header>
+
+              <img src="assets/img/post-cover.jpg" class="img-fluid rounded-3 my-4 shadow-sm" alt="Modern JavaScript kodları" loading="lazy">
+
+              <div class="post-content">
+                <p class="lead">
+                  JavaScript (ECMAScript) standardı her yıl gelişmeye devam ediyor. ES2023, 
+                  geliştirici deneyimini iyileştiren ve bazı yaygın senaryoları 
+                  çok daha kolay hale getiren güzel eklemelerle geldi.
+                </p>
+                <p>
+                  Bu yazıda, günlük kodlamalarımda hemen yer bulan ve sizin de 
+                  çok seveceğinizi düşündüğüm 5 özelliğe odaklanacağız.
+                </p>
+
+                <h2 class="h3 fw-bold mt-5 mb-3">1. `Array.prototype.findLast()` ve `findLastIndex()`</h2>
+                <p>
+                  Ne kadar basit görünse de, bir dizideki son elemanı bulmak için 
+                  önceden `array.reverse().find()` gibi tuhaf yöntemler 
+                  kullanıyorduk. Bu, orijinal diziyi mutasyona uğratma riski taşıyordu (eğer kopyasını almazsak). 
+                  Artık buna gerek yok.
+                </p>
+                
+                <pre><code class="language-javascript">
+const numbers = [10, 25, 30, 45, 50];
+
+// Eskiden:
+const lastOver30Old = [...numbers].reverse().find(n => n > 30); // 50
+
+// Yeni ve temiz yol:
+const lastOver30 = numbers.findLast(n => n > 30); // 50
+console.log(lastOver30);
+
+const lastIndexOver30 = numbers.findLastIndex(n => n > 30); // 4
+console.log(lastIndexOver30);
+</code></pre>
+
+                <h2 class="h3 fw-bold mt-5 mb-3">2. "Hashbang" Yorumları</h2>
+                <p>
+                  Eğer Node.js ile CLI (Komut Satırı Arayüzü) araçları yazıyorsanız, 
+                  dosyanın en başına `#!/usr/bin/env node` eklemeniz gerektiğini bilirsiniz. 
+                  Bu "hashbang" veya "shebang" satırı, işletim sistemine bu betiği 
+                  hangi yorumlayıcı ile çalıştıracağını söyler.
+                </p>
+                <p>
+                  ES2023 ile bu, artık resmi olarak dilin bir parçası. Tarayıcılar 
+                  ve diğer JavaScript motorları bu satırı bir yorum olarak kabul edecek 
+                  ve hata vermeyecek.
+                </p>
+
+                <blockquote class="blockquote fst-italic my-4">
+                  "Bu özellik, özellikle platformlar arası (cross-platform) betik 
+                  yazmayı ve JavaScript'in sunucu tarafı kullanımını 
+                  standartlaştırmayı kolaylaştırıyor."
+                </blockquote>
+
+                <h2 class="h3 fw-bold mt-5 mb-3">3. `Array.prototype.toSorted()` ve Diğerleri</h2>
+                <p>
+                  JavaScript'te `sort()` veya `reverse()` gibi metotların en büyük sorunu, 
+                  orijinal diziyi <strong>değiştirmeleriydi (mutate)</strong>. Bu durum, 
+                  React gibi "immutable" (değişmez) veri yapılarını tercih eden 
+                  kütüphanelerde sorun yaratıyordu.
+                </p>
+                <p>
+                  Yeni metotlar bu sorunu çözüyor:
+                </p>
+                
+                <ul>
+                  <li><code>.toSorted()</code>: Dizinin sıralanmış bir kopyasını döner (orijinale dokunmaz).</li>
+                  <li><code>.toReversed()</code>: Dizinin ters çevrilmiş bir kopyasını döner.</li>
+                  <li><code>.toSpliced()</code>: Dizinin belirli bir bölümü değiştirilmiş kopyasını döner.</li>
+                  <li><code>.with()</code>: Dizinin belirli bir indeksteki elemanı değiştirilmiş kopyasını döner.</li>
+                </ul>
+
+                <h2 class="h3 fw-bold mt-5 mb-3">Örnek Tablo Karşılaştırması</h2>
+                <p>
+                  Mutasyon yapan (eski) ve yapmayan (yeni) metotların karşılaştırması:
+                </p>
+
+                <div class="table-responsive">
+                  <table class="table table-striped table-bordered align-middle">
+                    <thead class="table-light">
+                      <tr>
+                        <th scope="col">Eski Metot (Mutasyon Yapan)</th>
+                        <th scope="col">Yeni Metot (Kopya Dönen)</th>
+                        <th scope="col">Kullanım Amacı</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><code>sort()</code></td>
+                        <td><code>toSorted()</code></td>
+                        <td>Sıralama</td>
+                      </tr>
+                      <tr>
+                        <td><code>reverse()</code></td>
+                        <td><code>toReversed()</code></td>
+                        <td>Ters Çevirme</td>
+                      </tr>
+                      <tr>
+                        <td><code>splice()</code></td>
+                        <td><code>toSpliced()</code></td>
+                        <td>Ekleme/Çıkarma</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="mt-4">
+                  Bu yenilikler, JavaScript'i daha güvenli, daha okunabilir ve 
+                  modern programlama paradigmalarına daha uygun hale getiriyor.
+                </p>
+              </div>
+
+            </article> <section class="author-box d-sm-flex align-items-center mt-5 p-4 rounded-4 shadow-sm">
+              <img src="assets/img/avatar.jpg" alt="Metehan (Yazar)" class="img-fluid rounded-circle me-sm-4 mb-3 mb-sm-0" style="width: 100px; height: 100px; object-fit: cover;" loading="lazy">
+              <div>
+                <h4 class="h5 mb-1 fw-bold">Metehan</h4>
+                <p class="text-body-secondary mb-2">
+                  Kıdemli Yazılım Geliştirici. Temiz kod, ölçeklenebilir 
+                  mimari ve kahve tutkunu.
+                </p>
+                <div>
+                  <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                  <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </section>
+
+            <section class="recommended-posts mt-5">
+              <h3 class="h4 fw-bold mb-3">Bunlar da İlginizi Çekebilir</h3>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="card h-100 shadow-sm card-hover">
+                    <div class="card-body">
+                      <h5 class="card-title h6 fw-bold">Sürdürülebilir CSS Mimarisi</h5>
+                      <p class="small text-body-secondary mb-2">BEM vs. CUBE CSS</p>
+                      <a href="post.html" class="btn btn-sm btn-outline-primary stretched-link">Oku</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 shadow-sm card-hover">
+                    <div class="card-body">
+                      <h5 class="card-title h6 fw-bold">REST API Tasarımında En İyi Pratikler</h5>
+                      <p class="small text-body-secondary mb-2">Versiyonlama ve Hata Yönetimi</p>
+                      <a href="post.html" class="btn btn-sm btn-outline-primary stretched-link">Oku</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 shadow-sm card-hover">
+                    <div class="card-body">
+                      <h5 class="card-title h6 fw-bold">Web Erişilebilirliği (a11y)</h5>
+                      <p class="small text-body-secondary mb-2">Neden Önemlidir?</p>
+                      <a href="post.html" class="btn btn-sm btn-outline-primary stretched-link">Oku</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div> </div> </div>
+    </main>
+
+    <footer class="text-center text-body-secondary p-4 mt-5 border-top">
+      <p class="mb-1">&copy; 2025 Metehan – Tüm hakları saklıdır.</p>
+      <ul class="list-inline mb-0">
+        <li class="list-inline-item"><a href="index.html" class="text-decoration-none">Ana Sayfa</a></li>
+        <li class="list-inline-item">&middot;</li>
+        <li class="list-inline-item"><a href="blog.html" class="text-decoration-none">Blog</a></li>
+        <li class="list-inline-item">&middot;</li>
+        <li class="list-inline-item"><a href="mailto:ornek@mail.com" class="text-decoration-none">E-posta</a></li>
+      </ul>
+    </footer>
+
+  </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

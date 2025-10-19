@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hakkımda - Metehan'ın Kişisel Blogu</title>
+  <meta name="description" content="Merhaba, ben Metehan. Kıdemli yazılım geliştiriciyim. Deneyimlerim, projelerim ve uzmanlık alanlarım hakkında daha fazla bilgi edinin.">
+  <meta property="og:title" content="Hakkımda - Metehan'ın Kişisel Blogu">
+  <meta property="og:description" content="Deneyimlerim, projelerim ve uzmanlık alanlarım.">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header class="mobile-header d-lg-none p-3 d-flex justify-content-between align-items-center">
+    <a href="index.html" class="fs-4 text-decoration-none fw-bold">M. Blog</a>
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Navigasyonu aç">
+      <i class="bi bi-list"></i>
+    </button>
+  </header>
+
+  <nav class="sidebar offcanvas-lg offcanvas-start p-4" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+    <div class="offcanvas-header d-lg-none">
+      <h5 class="offcanvas-title" id="sidebarLabel">Menü</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="Kapat"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <div class="sidebar-logo text-center text-lg-start mb-4">
+        <a href="index.html" class="fs-3 text-decoration-none fw-bolder">Metehan'ın Blogu</a>
+        <p class="text-body-secondary fs-sm mt-1">Yazılım ve Yaşam Notları</p>
+      </div>
+      <ul class="nav nav-pills flex-column gap-1 mb-auto">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <i class="bi bi-house-door-fill me-2"></i> Ana Sayfa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="blog.html" class="nav-link">
+            <i class="bi bi-file-earmark-text-fill me-2"></i> Blog
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link active" aria-current="page">
+            <i class="bi bi-person-fill me-2"></i> Hakkımda
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">
+            <i class="bi bi-envelope-fill me-2"></i> İletişim
+          </a>
+        </li>
+      </ul>
+      <div class="mt-4">
+        <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="GitHub profilim"><i class="bi bi-github"></i></a>
+        <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="LinkedIn profilim"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Twitter profilim"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content-wrapper">
+    
+    <main class="main-content">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-xl-10">
+
+            <section class="profile-section p-4 p-md-5 rounded-4 content-panel shadow-sm">
+              <div class="row g-4 align-items-center">
+                <div class="col-lg-4 text-center">
+                  <img src="assets/img/avatar.jpg" alt="Metehan (Avatar)" class="img-fluid rounded-circle shadow" style="max-width: 250px; border: 5px solid var(--bs-body-bg);" loading="lazy">
+                </div>
+                <div class="col-lg-8">
+                  <h1 class="display-5 fw-bold">Merhaba, ben Metehan.</h1>
+                  <p class="lead text-body-secondary">
+                    İstanbul'da yaşayan bir kıdemli yazılım geliştiriciyim. 
+                    Ölçeklenebilir sistemler, bulut mimarileri ve 
+                    kullanıcı odaklı ürünler geliştirmeye tutkuluyum.
+                  </p>
+                  <p>
+                    Kariyerim boyunca hem startup dinamizmini hem de kurumsal 
+                    yapıların disiplinini deneyimleme şansı buldum. 
+                    Bu blogda, teknik bilgilerimi ve bu yolculukta 
+                    edindiğim tecrübeleri paylaşıyorum.
+                  </p>
+                  <div class="mt-4">
+                    <h5 class="h6 text-body-secondary">Uzmanlık Alanlarım:</h5>
+                    <span class="badge fs-6 text-bg-primary">C# / .NET</span>
+                    <span class="badge fs-6 text-bg-success">Backend</span>
+                    <span class="badge fs-6 text-bg-info">Azure</span>
+                    <span class="badge fs-6 text-bg-warning">DevOps</span>
+                    <span class="badge fs-6 text-bg-secondary">React</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="experience-timeline mt-5">
+              <h2 class="h3 fw-bold mb-4">Deneyimlerim ve Projelerim</h2>
+              
+              <div class="list-group shadow-sm rounded-4 overflow-hidden">
+                
+                <div class="list-group-item list-group-item-action p-4">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 fw-bold">Kıdemli Yazılım Geliştirici</h5>
+                    <small class="text-body-secondary">2021 - Günümüz</small>
+                  </div>
+                  <p class="mb-1 text-primary fw-medium">Teknoloji Çözümleri A.Ş.</p>
+                  <p class="mb-0 small">
+                    Yüksek trafikli e-ticaret platformunun backend servislerinin 
+                    geliştirilmesi. .NET Core, Microservices, RabbitMQ ve 
+                    Azure DevOps CI/CD süreçlerinin yönetimi.
+                  </p>
+                </div>
+                
+                <div class="list-group-item list-group-item-action p-4">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 fw-bold">Yazılım Geliştirici</h5>
+                    <small class="text-body-secondary">2018 - 2021</small>
+                  </div>
+                  <p class="mb-1 text-primary fw-medium">Fintech Startup</p>
+                  <p class="mb-0 small">
+                    Yeni nesil bir ödeme sistemi altyapısının geliştirilmesinde 
+                    rol aldım. REST API tasarımı, veritabanı optimizasyonu 
+                    ve React tabanlı ön yüz geliştirmelerine destek verdim.
+                  </p>
+                </div>
+
+                <div class="list-group-item list-group-item-action p-4">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 fw-bold">Kişisel Proje: Blog Motoru</h5>
+                    <small class="text-body-secondary">2023</small>
+                  </div>
+                  <p class="mb-1 text-primary fw-medium">GitHub</p>
+                  <p class="mb-0 small">
+                    Markdown destekli, statik site üreteci mantığında çalışan 
+                    basit bir blog motoru. (Bu site gibi!)
+                  </p>
+                </div>
+
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-center text-body-secondary p-4 mt-5 border-top">
+      <p class="mb-1">&copy; 2025 Metehan – Tüm hakları saklıdır.</p>
+      <ul class="list-inline mb-0">
+        <li class="list-inline-item"><a href="index.html" class="text-decoration-none">Ana Sayfa</a></li>
+        <li class="list-inline-item">&middot;</li>
+        <li class="list-inline-item"><a href="blog.html" class="text-decoration-none">Blog</a></li>
+        <li class="list-inline-item">&middot;</li>
+        <li class="list-inline-item"><a href="mailto:ornek@mail.com" class="text-decoration-none">E-posta</a></li>
+      </ul>
+    </footer>
+
+  </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

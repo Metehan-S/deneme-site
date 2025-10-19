@@ -1,0 +1,197 @@
+/*
+ * Kişisel Blog Projesi - Özel Stil Dosyası
+ * assets/css/styles.css
+ */
+
+/* -------------------------------------------------------------------
+ * 1. CSS Değişkenleri ve Temel Ayarlar
+ * ------------------------------------------------------------------- */
+
+:root {
+  --sidebar-width: 260px; /* Masaüstü sol menü genişliği */
+  --mobile-header-height: 60px; /* Mobil üst bar yüksekliği */
+  
+  /* Arkaplan Görseli (Açık Tema) - Okunabilirlik için %85 beyaz filtre */
+  --body-bg-image-light: linear-gradient(rgba(255, 255, 255, .85), rgba(255, 255, 255, .85)), 
+                         url('../img/bg.jpg') center center / cover no-repeat fixed;
+
+  /* Arkaplan Görseli (Koyu Tema) - Okunabilirlik için %80 siyah filtre */
+  --body-bg-image-dark: linear-gradient(rgba(10, 10, 10, .8), rgba(10, 10, 10, .8)), 
+                        url('../img/bg.jpg') center center / cover no-repeat fixed;
+}
+
+/* -------------------------------------------------------------------
+ * 2. Bootstrap 5.3+ Karanlık Mod Desteği
+ * ------------------------------------------------------------------- */
+
+/* * Bootstrap 5.3'ün yerleşik karanlık modunu kullanıyoruz.
+ * HTML etiketine data-bs-theme="dark" eklendiğinde bu stiller devreye girer.
+ * Sadece arkaplan görselimizi eziyoruz.
+ */
+
+[data-bs-theme="dark"] {
+  --bs-body-bg-rgb: 17, 24, 39; /* Koyu tema ana arkaplanı */
+  color-scheme: dark;
+}
+
+/* Sadece arkaplanı ezelim */
+[data-bs-theme="dark"] body {
+  background: var(--body-bg-image-dark);
+}
+
+/* -------------------------------------------------------------------
+ * 3. Genel Düzen (Layout)
+ * ------------------------------------------------------------------- */
+
+body {
+  background: var(--body-bg-image-light);
+  min-height: 100vh;
+  /* Bootstrap'in sistem fontlarını kullanıyoruz (istek üzerine) */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* * Mobil Üst Başlık (Hamburger Menü Tetikleyicisi)
+ * Sadece 'lg' (992px) altında görünür (d-lg-none)
+ */
+.mobile-header {
+  height: var(--mobile-header-height);
+  position: sticky;
+  top: 0;
+  z-index: 1040; /* offcanvas'ın altında (1045) */
+  background-color: var(--bs-body-bg); /* Tema değişimine uyar */
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+/* * Sol Kenar Çubuğu (Sidebar)
+ * Bootstrap Offcanvas bileşeni ile güçlendirilmiştir.
+ * 'lg' (992px) altında: offcanvas (gizli)
+ * 'lg' (992px) ve üstünde: sabit (fixed) sol menü
+ */
+.sidebar.offcanvas-lg {
+  background-color: var(--bs-body-bg);
+  border-right: var(--bs-border-width) solid var(--bs-border-color);
+}
+
+/* Masaüstü (lg ve üstü) için Sol Sabit Menü Stilleri */
+@media (min-width: 992px) {
+  .sidebar.offcanvas-lg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    /* Offcanvas'ın mobil davranışını eziyoruz */
+    transform: none;
+    visibility: visible !important;
+    border-right: var(--bs-border-width) solid var(--bs-border-color);
+    box-shadow: 0 0 15px rgba(0,0,0,.05);
+  }
+}
+
+/* * Ana İçerik Alanı ve Footer Kapsayıcısı
+ * Tüm içeriği (main + footer) sarar.
+ */
+.content-wrapper {
+  /* Mobilde üst barda (60px) boşluk bırak */
+  padding-top: var(--mobile-header-height);
+}
+
+/* Masaüstünde ana içerik sol menü kadar (260px) sağa itilir */
+@media (min-width: 992px) {
+  .content-wrapper {
+    margin-left: var(--sidebar-width);
+    padding-top: 0; /* Masaüstünde üst boşluğa gerek yok */
+  }
+}
+
+/* Ana içerik alanı (main) için iç boşluklar */
+.main-content {
+  padding: 1.5rem;
+  min-height: calc(100vh - 100px); /* Footer yüksekliği kadar boşluk */
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding: 2.5rem;
+  }
+}
+
+
+/* -------------------------------------------------------------------
+ * 4. Bileşen Stilleri (Kartlar, Kod Blokları vb.)
+ * ------------------------------------------------------------------- */
+
+/* Ana sayfadaki karşılama alanı */
+.hero-section {
+  /* Arkaplanı hafifçe ayırarak okunabilirliği artır */
+  background-color: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color-translucent);
+}
+
+/* Blog kartlarına hover efekti */
+.card-hover {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--bs-box-shadow-lg);
+}
+
+/* Kartların ve içerik panellerinin arkaplanı */
+.card,
+.content-panel,
+.list-group-item {
+  /* Arka plandaki görselin okunabilirliği bozmaması için */
+  background-color: var(--bs-body-bg);
+}
+
+/* Blog Detay - Kod Bloğu (pre code) */
+pre code {
+  display: block;
+  padding: 1rem 1.5rem;
+  background-color: var(--bs-tertiary-bg); /* Tema değişimine uyar */
+  color: var(--bs-body-color);
+  border: 1px solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
+  white-space: pre-wrap; /* Uzun satırları kır */
+  word-break: break-all;
+}
+
+/* Blog Detay - Alıntı (blockquote) */
+.blockquote {
+  background-color: var(--bs-tertiary-bg);
+  border-left: 5px solid var(--bs-primary);
+  padding: 1rem 1.5rem;
+}
+
+/* Blog Detay - Yazar Kutusu */
+.author-box {
+  background-color: var(--bs-light-bg-subtle);
+  border: 1px solid var(--bs-border-color-translucent);
+}
+
+/* -------------------------------------------------------------------
+ * 5. Erişilebilirlik
+ * ------------------------------------------------------------------- */
+
+/* Klavye ile gezinme için odak (focus) stillerini belirginleştir */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--bs-primary-border-subtle);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--bs-primary-bg-subtle);
+}
+
+/* Aktif navigasyon linki */
+.sidebar .nav-link.active {
+  font-weight: 600;
+  background-color: var(--bs-primary-bg-subtle);
+  border-left: 3px solid var(--bs-primary);
+  padding-left: calc(var(--bs-nav-link-padding-x) - 3px);
+}

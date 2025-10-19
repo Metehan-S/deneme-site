@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Ana Sayfa - Metehan'ın Kişisel Blogu</title>
+  <meta name="description" content="Teknoloji, yazılım ve hayat üzerine kişisel notlarımı paylaştığım bloguma hoş geldiniz. En son yazılarımı keşfedin.">
+  <meta property="og:title" content="Ana Sayfa - Metehan'ın Kişisel Blogu">
+  <meta property="og:description" content="Teknoloji, yazılım ve hayat üzerine kişisel notlar.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.ornekblog.com/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <header class="mobile-header d-lg-none p-3 d-flex justify-content-between align-items-center">
+    <a href="index.html" class="fs-4 text-decoration-none fw-bold">M. Blog</a>
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Navigasyonu aç">
+      <i class="bi bi-list"></i>
+    </button>
+  </header>
+
+  <nav class="sidebar offcanvas-lg offcanvas-start p-4" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+    
+    <div class="offcanvas-header d-lg-none">
+      <h5 class="offcanvas-title" id="sidebarLabel">Menü</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="Kapat"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column">
+      <div class="sidebar-logo text-center text-lg-start mb-4">
+        <a href="index.html" class="fs-3 text-decoration-none fw-bolder">Metehan'ın Blogu</a>
+        <p class="text-body-secondary fs-sm mt-1">Yazılım ve Yaşam Notları</p>
+      </div>
+
+      <ul class="nav nav-pills flex-column gap-1 mb-auto">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active" aria-current="page">
+            <i class="bi bi-house-door-fill me-2"></i> Ana Sayfa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="blog.html" class="nav-link">
+            <i class="bi bi-file-earmark-text-fill me-2"></i> Blog
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">
+            <i class="bi bi-person-fill me-2"></i> Hakkımda
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">
+            <i class="bi bi-envelope-fill me-2"></i> İletişim
+          </a>
+        </li>
+      </ul>
+
+      <div class="mt-4">
+        <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="GitHub profilim"><i class="bi bi-github"></i></a>
+        <a href="#" class="btn btn-outline-secondary btn-sm me-2" aria-label="LinkedIn profilim"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Twitter profilim"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content-wrapper">
+    
+    <main class="main-content">
+
+      <section class="hero-section text-center p-4 p-md-5 mb-5 rounded-4 shadow-sm">
+        <h1 class="display-4 fw-bold">Metehan'ın Kişisel Blogu</h1>
+        <p class="lead col-md-8 mx-auto mt-3">
+          Merhaba! Ben Metehan. Bu blogda yazılım geliştirme süreçleri, yeni teknolojiler, 
+          ve bu süreçlerde öğrendiğim hayat dersleri üzerine notlarımı paylaşıyorum.
+        </p>
+        <a href="blog.html" class="btn btn-primary btn-lg mt-3">
+          <i class="bi bi-arrow-right-circle me-1"></i> Blogu Keşfet
+        </a>
+      </section>
+
+      <section class="latest-posts">
+        <h2 class="h3 fw-bold border-bottom pb-2 mb-4">En Son Paylaşımlar</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+
+          <div class="col">
+            <div class="card h-100 shadow-sm card-hover">
+              <img src="assets/img/post1.jpg" class="card-img-top" alt="Modern JavaScript özellikleri" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5 fw-bold">Modern JavaScript (ES2023) ile Gelen 5 Harika Özellik</h3>
+                <p class="card-text small text-body-secondary">15.10.2025</p>
+                <p class="card-text flex-grow-1">
+                  JavaScript dünyası durmuyor. ES2023 ile gelen `Array.prototype.findLast` gibi 
+                  hayat kurtaran yeniliklere hızlıca göz atalım.
+                </p>
+                <div class="mb-3">
+                  <span class="badge text-bg-primary">JavaScript</span>
+                  <span class="badge text-bg-secondary">Web Geliştirme</span>
+                </div>
+                <a href="post.html" class="btn btn-outline-primary btn-sm mt-auto stretched-link">Devamını Oku</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="card h-100 shadow-sm card-hover">
+              <img src="assets/img/post2.jpg" class="card-img-top" alt="CSS mimarisi" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5 fw-bold">Sürdürülebilir CSS Mimarisi: BEM vs. CUBE CSS</h3>
+                <p class="card-text small text-body-secondary">12.10.2025</p>
+                <p class="card-text flex-grow-1">
+                  Projeler büyüdükçe CSS'i yönetmek zorlaşır. BEM metodolojisi mi, 
+                  yoksa daha modern bir yaklaşım olan CUBE CSS mi?
+                </p>
+                <div class="mb-3">
+                  <span class="badge text-bg-danger">CSS</span>
+                  <span class="badge text-bg-secondary">Frontend</span>
+                </div>
+                <a href="post.html" class="btn btn-outline-primary btn-sm mt-auto stretched-link">Devamını Oku</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm card-hover">
+              <img src="assets/img/post3.jpg" class="card-img-top" alt="Veritabanı optimizasyonu" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5 fw-bold">SQL'de Index Kavramı: Yavaş Sorgulara Elveda Deyin</h3>
+                <p class="card-text small text-body-secondary">10.10.2025</p>
+                <p class="card-text flex-grow-1">
+                  Veritabanı performansının temel taşı olan index'ler nedir, 
+                  nasıl çalışır ve ne zaman kullanılmalıdır?
+                </p>
+                <div class="mb-3">
+                  <span class="badge text-bg-success">Backend</span>
+                  <span class="badge text-bg-info">Database</span>
+                </div>
+                <a href="post.html" class="btn btn-outline-primary btn-sm mt-auto stretched-link">Devamını Oku</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm card-hover">
+              <img src="assets/img/post4.jpg" class="card-img-top" alt="API tasarımı" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5 fw-bold">REST API Tasarımında En İyi Pratikler</h3>
+                <p class="card-text small text-body-secondary">08.10.2025</p>
+                <p class="card-text flex-grow-1">
+                  İyi tasarlanmış bir API, uygulamanızın bel kemiğidir. 
+                  Versiyonlama, isimlendirme ve hata yönetimi üzerine notlar.
+                </p>
+                <div class="mb-3">
+                  <span class="badge text-bg-warning">API</span>
+                  <span class="badge text-bg-success">Backend</span>
+                </div>
+                <a href="post.html" class="btn btn-outline-primary btn-sm mt-auto stretched-link">Devamını Oku</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm card-hover">
+              <img src="assets/img/post5.jpg" class="card-img-top" alt="Uzaktan çalışma" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5 fw-bold">Uzaktan Çalışmada Verimlilik: Odaklanmayı Kaybetmemek</h3>
+                <p class="card-text small text-body-secondary">05.10.2025</p>
+                <p class="card-text flex-grow-1">
+                  İki yıldır tam zamanlı uzaktan çalışan biri olarak, 
+                  dikkat dağınıklığını önleme ve "flow state" durumuna geçme tekniklerim.
+                </p>
+                <div class="mb-3">
+                  <span class="badge text-bg-info">Yaşam</span>
+                  <span class="badge text-bg-light text-dark border">Verimlilik</span>
+                </div>
+                <a href="post.html" class="btn btn-outline-primary btn-sm mt-auto stretched-link">Devamını Oku</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 shadow-sm card-hover">
+              <img src="assets/img/post6.jpg" class="card-img-top" alt="Web erişilebilirliği" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5 fw-bold">Web Erişilebilirliği (a11y) Neden Önemlidir?</h3>
+                <p class="card-text small text-body-secondary">02.10.2025</p>
+                <p class="card-text flex-grow-1">
+                  Sadece "olması gereken" bir şey değil, aynı zamanda daha iyi SEO 
+                  ve daha geniş bir kullanıcı kitlesi demektir. Temel WCAG prensipleri.
+                </p>
+                <div class="mb-3">
+                  <span class="badge text-bg-secondary">Frontend</span>
+                  <span class="badge text-bg-info">a11y</span>
+                </div>
+                <a href="post.html" class="btn btn-outline-primary btn-sm mt-auto stretched-link">Devamını Oku</a>
+              </div>
+            </div>
+          </div>
+
+        </div> </section>
+
+    </main>
+
+    <footer class="text-center text-body-secondary p-4 mt-5 border-top">
+      <p class="mb-1">&copy; 2025 Metehan – Tüm hakları saklıdır.</p>
+      <ul class="list-inline mb-0">
+        <li class="list-inline-item"><a href="index.html" class="text-decoration-none">Ana Sayfa</a></li>
+        <li class="list-inline-item">&middot;</li>
+        <li class="list-inline-item"><a href="blog.html" class="text-decoration-none">Blog</a></li>
+        <li class="list-inline-item">&middot;</li>
+        <li class="list-inline-item"><a href="mailto:ornek@mail.com" class="text-decoration-none">E-posta</a></li>
+      </ul>
+    </footer>
+
+  </div> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
