@@ -185,3 +185,97 @@ textarea:focus-visible {
   border-left: 3px solid var(--bs-primary);
   padding-left: calc(var(--bs-nav-link-padding-x) - 3px);
 }
+
+/* Kaynaklar sayfası özel stilleri */
+.resource-highlight {
+  background-color: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color-translucent);
+}
+
+.resource-path .list-group-item {
+  background-color: transparent;
+  border: none;
+  padding-left: 0;
+  font-weight: 600;
+}
+
+.resource-card {
+  background-color: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color-translucent);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bs-box-shadow-lg);
+}
+
+.resource-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: var(--bs-primary-bg-subtle);
+  color: var(--bs-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.resource-stack .list-group-item {
+  background-color: transparent;
+  border: none;
+  padding-left: 0;
+}
+
+.callout-panel {
+  background-color: var(--bs-primary-bg-subtle);
+  border: 1px solid var(--bs-primary-border-subtle);
+}
+
+.callout-panel .btn {
+  min-width: 180px;
+}
+
+/* Bülten sayfası özel stilleri */
+.newsletter-hero {
+  background-color: var(--bs-tertiary-bg);
+  border: 1px solid var(--bs-border-color-translucent);
+}
+
+.newsletter-card {
+  background-color: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color-translucent);
+}
+
+.feature-tile {
+  background-color: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color-translucent);
+}
+
+.feature-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--bs-primary-bg-subtle);
+  color: var(--bs-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.sample-card {
+  background-color: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color-translucent);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.sample-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bs-box-shadow-lg);
+}
+
+.newsletter-samples .btn.disabled {
+  pointer-events: none;
+}
